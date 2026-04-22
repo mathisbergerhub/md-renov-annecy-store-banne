@@ -177,7 +177,7 @@ a {
   z-index: 1;
   display: grid;
   grid-template-columns: minmax(0, 1.02fr) minmax(380px, 0.98fr);
-  align-items: center;
+  align-items: start;
   gap: 3rem;
   min-height: calc(100svh - 82px - 2rem);
 }
@@ -318,6 +318,7 @@ h3 {
   background: transparent;
   border: 0;
   box-shadow: none;
+  align-self: start;
 }
 
 .showroom-row span,
@@ -403,10 +404,11 @@ h3 {
 }
 
 .media-card--hero {
-  min-height: 720px;
+  min-height: 920px;
 }
 
 .media-card--hero img {
+  object-fit: contain;
   object-position: center top;
 }
 
@@ -863,7 +865,7 @@ h3 {
   }
 
   .media-card--hero {
-    min-height: 580px;
+    min-height: 760px;
   }
 }
 
@@ -921,7 +923,7 @@ h3 {
   .container { width: min(calc(100% - 1.25rem), var(--container)); }
   .offer-bar__row { justify-content: flex-start; }
   .brand { max-width: 180px; }
-  .media-card--hero { min-height: 420px; }
+  .media-card--hero { min-height: 560px; }
   .agendize-frame { min-height: 620px; }
   .legal-card { padding: 1.2rem; }
 }
