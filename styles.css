@@ -69,6 +69,12 @@ a {
   color: rgba(255, 255, 255, 0.86);
 }
 
+.offer-bar__viewport {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
 .offer-bar__row {
   display: flex;
   flex-wrap: wrap;
@@ -79,6 +85,8 @@ a {
   padding: 0.45rem 0;
   font-size: 0.88rem;
   line-height: 1.35;
+  flex: 0 0 auto;
+  min-width: 100%;
 }
 
 .offer-bar__row p {
@@ -87,6 +95,10 @@ a {
 
 .offer-bar strong {
   color: var(--white);
+}
+
+.offer-bar__row--clone {
+  display: none;
 }
 
 .site-header {
@@ -453,6 +465,11 @@ h3 {
   max-width: 700px;
   display: grid;
   gap: 0.85rem;
+}
+
+#faq .section-intro {
+  gap: 0.4rem;
+  margin-bottom: 1.65rem;
 }
 
 .section-head,
@@ -947,9 +964,18 @@ h3 {
     padding: 0.7rem 0;
     font-size: 0.8rem;
     line-height: 1.28;
+    min-width: max-content;
+    padding-right: 2rem;
   }
   .offer-bar__row p {
-    max-width: 28ch;
+    max-width: none;
+    white-space: nowrap;
+  }
+  .offer-bar__row--clone {
+    display: grid;
+  }
+  .offer-bar__viewport {
+    gap: 2rem;
   }
   .brand { max-width: 180px; }
   .hero-copy {
@@ -1013,4 +1039,25 @@ h3 {
   }
   .agendize-frame { min-height: 620px; }
   .legal-card { padding: 1.2rem; }
+}
+
+@media (max-width: 560px) and (prefers-reduced-motion: no-preference) {
+  .offer-bar__viewport {
+    overflow: hidden;
+  }
+
+  .offer-bar__row,
+  .offer-bar__row--clone {
+    animation: offer-marquee 18s linear infinite;
+  }
+}
+
+@keyframes offer-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% - 2rem));
+  }
 }
