@@ -1,4 +1,39 @@
 const reveals = document.querySelectorAll(".reveal");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+function startCountup(scope) {
+  const counters = scope.querySelectorAll("[data-countup]");
+
+  counters.forEach((counter) => {
+    if (counter.dataset.countupStarted === "true") {
+      return;
+    }
+
+    counter.dataset.countupStarted = "true";
+
+    const target = Number(counter.getAttribute("data-countup") || "0");
+
+    if (prefersReducedMotion.matches || target <= 0) {
+      counter.textContent = String(target);
+      return;
+    }
+
+    const duration = 1400;
+    const start = performance.now();
+
+    function tick(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      counter.textContent = String(Math.round(target * eased));
+
+      if (progress < 1) {
+        window.requestAnimationFrame(tick);
+      }
+    }
+
+    window.requestAnimationFrame(tick);
+  });
+}
 
 if ("IntersectionObserver" in window) {
   const observer = new IntersectionObserver(
@@ -9,6 +44,7 @@ if ("IntersectionObserver" in window) {
         }
 
         entry.target.classList.add("is-visible");
+        startCountup(entry.target);
         observer.unobserve(entry.target);
       });
     },
@@ -20,7 +56,10 @@ if ("IntersectionObserver" in window) {
 
   reveals.forEach((element) => observer.observe(element));
 } else {
-  reveals.forEach((element) => element.classList.add("is-visible"));
+  reveals.forEach((element) => {
+    element.classList.add("is-visible");
+    startCountup(element);
+  });
 }
 
 document.querySelectorAll(".faq-item").forEach((item) => {
