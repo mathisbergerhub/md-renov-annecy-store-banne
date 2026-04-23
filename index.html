@@ -63,14 +63,18 @@
     <div class="offer-bar">
       <div class="container offer-bar__viewport">
         <div class="offer-bar__row">
-          <p>Jusqu'à <strong>-25%*</strong> sur les stores bannes jusqu'au <strong>12 mai 2026</strong></p>
-          <p>Installation en <strong>Haute-Savoie (74)</strong> et <strong>Savoie (73)</strong></p>
-          <p>Projet personnalisé et accompagnement sur mesure</p>
+          <span class="offer-bar__item">Jusqu'à <strong>-25%*</strong> sur les stores bannes jusqu'au <strong>12 mai 2026</strong></span>
+          <span class="offer-bar__dot" aria-hidden="true">•</span>
+          <span class="offer-bar__item">Installation en <strong>Haute-Savoie (74)</strong> et <strong>Savoie (73)</strong></span>
+          <span class="offer-bar__dot" aria-hidden="true">•</span>
+          <span class="offer-bar__item">Projet personnalisé et accompagnement sur mesure</span>
         </div>
         <div class="offer-bar__row offer-bar__row--clone" aria-hidden="true">
-          <p>Jusqu'à <strong>-25%*</strong> sur les stores bannes jusqu'au <strong>12 mai 2026</strong></p>
-          <p>Installation en <strong>Haute-Savoie (74)</strong> et <strong>Savoie (73)</strong></p>
-          <p>Projet personnalisé et accompagnement sur mesure</p>
+          <span class="offer-bar__item">Jusqu'à <strong>-25%*</strong> sur les stores bannes jusqu'au <strong>12 mai 2026</strong></span>
+          <span class="offer-bar__dot" aria-hidden="true">•</span>
+          <span class="offer-bar__item">Installation en <strong>Haute-Savoie (74)</strong> et <strong>Savoie (73)</strong></span>
+          <span class="offer-bar__dot" aria-hidden="true">•</span>
+          <span class="offer-bar__item">Projet personnalisé et accompagnement sur mesure</span>
         </div>
       </div>
     </div>
@@ -107,6 +111,27 @@
             <div class="offer-box">
               <p class="offer-box__value">Jusqu'à -25%*</p>
               <p class="offer-box__date">jusqu'au 12 mai 2026</p>
+              <div
+                class="countdown"
+                data-countdown="2026-05-12T23:59:59+02:00"
+                aria-label="Temps restant avant la fin de l'offre"
+              >
+                <p class="countdown__label">Fin de l'offre dans</p>
+                <div class="countdown__grid">
+                  <div class="countdown__item">
+                    <strong data-countdown-unit="days">00</strong>
+                    <span>jours</span>
+                  </div>
+                  <div class="countdown__item">
+                    <strong data-countdown-unit="hours">00</strong>
+                    <span>heures</span>
+                  </div>
+                  <div class="countdown__item">
+                    <strong data-countdown-unit="minutes">00</strong>
+                    <span>min</span>
+                  </div>
+                </div>
+              </div>
               <p class="offer-box__legal">
                 *Voir conditions en magasin et
                 <a href="./conditions-offre.html">conditions de l'offre</a>.
@@ -297,10 +322,11 @@
         <div class="container split-grid split-grid--contact">
           <div class="split-copy reveal">
             <p class="eyebrow">Prendre rendez-vous</p>
-            <h2>Réservez un rendez-vous pour étudier votre projet avec un conseiller.</h2>
+            <h2>Choisissez le moment qui vous convient pour parler de votre projet.</h2>
             <p>
-              Prenez rendez-vous en ligne avec l'équipe MD Rénov' ou contactez
-              directement le showroom pour être accompagné dans votre projet.
+              Réservez votre créneau en ligne, appelez directement l'équipe ou
+              passez au showroom de Meythet pour avancer sur votre projet de
+              store banne.
             </p>
             <div class="hero-actions">
               <a class="button button--primary" href="tel:+33450243090">Appeler le 04 50 24 30 90</a>
@@ -314,13 +340,39 @@
               </a>
             </div>
           </div>
-          <div class="widget-shell reveal" id="contact">
-            <iframe
-              class="agendize-frame"
-              src="https://france.agendize.com/web/widget/?c=MDRENOV_Annecy&amp;cs=false&amp;lang=fr&amp;source=web"
-              title="Prendre rendez-vous en ligne avec MD Rénov'"
-              loading="lazy"
-            ></iframe>
+          <div class="contact-stack" id="contact">
+            <div class="widget-shell reveal">
+              <iframe
+                class="agendize-frame"
+                src="https://france.agendize.com/web/widget/?c=MDRENOV_Annecy&amp;cs=false&amp;lang=fr&amp;source=web"
+                title="Prendre rendez-vous en ligne avec MD Rénov'"
+                loading="lazy"
+              ></iframe>
+            </div>
+            <div class="map-card reveal">
+              <div class="map-card__copy">
+                <p class="eyebrow">Showroom Annecy</p>
+                <h3>Retrouvez-nous à Meythet.</h3>
+                <p>62 Route de Frangy, 74960 Meythet - Annecy</p>
+                <a
+                  class="button button--ghost"
+                  href="https://www.google.com/maps/dir/?api=1&amp;destination=MD%20R%C3%A9nov%2062%20Route%20de%20Frangy%2074960%20Meythet%20Annecy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Me rendre au magasin
+                </a>
+              </div>
+              <div class="map-embed">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2775.3961904452512!2d6.086838576523987!3d45.92338077108507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478b850529d1b97f%3A0x77434beec9374a97!2sMD%20R%C3%A9nov&#39;!5e0!3m2!1sfr!2sfr!4v1776953611642!5m2!1sfr!2sfr"
+                  title="Plan du showroom MD Rénov' à Meythet"
+                  loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
           </div>
         </div>
       </section>

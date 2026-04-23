@@ -72,25 +72,32 @@ a {
 .offer-bar__viewport {
   display: flex;
   align-items: center;
+  justify-content: center;
+  gap: 2rem;
   overflow: hidden;
 }
 
 .offer-bar__row {
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
+  flex-wrap: nowrap;
+  gap: 0.9rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 44px;
   padding: 0.45rem 0;
   font-size: 0.88rem;
   line-height: 1.35;
   flex: 0 0 auto;
-  min-width: 100%;
+  min-width: max-content;
 }
 
-.offer-bar__row p {
-  margin: 0;
+.offer-bar__item,
+.offer-bar__dot {
+  white-space: nowrap;
+}
+
+.offer-bar__dot {
+  opacity: 0.42;
 }
 
 .offer-bar strong {
@@ -275,6 +282,52 @@ h3 {
 .offer-box__legal {
   color: var(--muted);
   font-size: 0.85rem;
+}
+
+.countdown {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.75rem;
+}
+
+.countdown__label {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.countdown__grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.countdown__item {
+  min-width: 82px;
+  padding: 0.7rem 0.8rem;
+  border-radius: 16px;
+  background: rgba(31, 31, 35, 0.06);
+}
+
+.countdown__item strong,
+.countdown__item span {
+  display: block;
+}
+
+.countdown__item strong {
+  color: var(--terracotta-deep);
+  font-size: 1.3rem;
+  line-height: 1;
+}
+
+.countdown__item span {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.76rem;
+  text-transform: uppercase;
 }
 
 .hero-points {
@@ -612,16 +665,67 @@ h3 {
   align-items: stretch;
 }
 
+.contact-stack {
+  display: grid;
+  gap: 1rem;
+}
+
 .widget-shell {
-  padding: 0.8rem;
+  padding: 0.55rem;
 }
 
 .agendize-frame {
   width: 100%;
-  min-height: 780px;
+  height: clamp(500px, 62vh, 590px);
+  min-height: clamp(500px, 62vh, 590px);
   border: 0;
   border-radius: calc(var(--radius-lg) - 6px);
   background: #fff;
+}
+
+.map-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(260px, 1fr);
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(31, 31, 35, 0.08);
+  box-shadow: var(--shadow-soft);
+}
+
+.map-card__copy {
+  display: grid;
+  align-content: start;
+  gap: 0.8rem;
+  padding: 0.35rem 0.2rem 0.2rem;
+}
+
+.map-card__copy .eyebrow {
+  margin-bottom: 0;
+}
+
+.map-card__copy h3 {
+  font-size: 1.45rem;
+}
+
+.map-card__copy p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+.map-embed {
+  min-height: 280px;
+  overflow: hidden;
+  border-radius: calc(var(--radius-lg) - 6px);
+}
+
+.map-embed iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 280px;
+  border: 0;
 }
 
 .journey-steps {
@@ -895,6 +999,9 @@ h3 {
   .nav { display: none; }
   .hero { padding-top: 1.25rem; padding-bottom: 1rem; }
   .hero-grid { min-height: auto; gap: 1.5rem; }
+  .map-card {
+    grid-template-columns: 1fr;
+  }
   .offer-layout,
   .journey-steps,
   .review-list,
@@ -958,24 +1065,16 @@ h3 {
     letter-spacing: -0.04em;
   }
   .offer-bar__row {
-    display: grid;
-    gap: 0.55rem;
+    gap: 0.9rem;
     justify-content: flex-start;
-    padding: 0.7rem 0;
+    padding: 0.7rem 0 0.7rem 0;
     font-size: 0.8rem;
     line-height: 1.28;
     min-width: max-content;
     padding-right: 2rem;
   }
-  .offer-bar__row p {
-    max-width: none;
-    white-space: nowrap;
-  }
   .offer-bar__row--clone {
-    display: grid;
-  }
-  .offer-bar__viewport {
-    gap: 2rem;
+    display: flex;
   }
   .brand { max-width: 180px; }
   .hero-copy {
@@ -1000,6 +1099,18 @@ h3 {
   }
   .hero-actions {
     margin-top: 1.2rem;
+  }
+  .countdown__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .countdown__item {
+    min-width: 0;
+    padding: 0.6rem 0.4rem;
+    text-align: center;
+  }
+  .countdown__item strong {
+    font-size: 1.08rem;
   }
   .microcopy {
     margin-top: 0.85rem;
@@ -1037,7 +1148,18 @@ h3 {
     font-size: 0.95rem;
     line-height: 1.6;
   }
-  .agendize-frame { min-height: 620px; }
+  .agendize-frame {
+    height: 500px;
+    min-height: 500px;
+  }
+  .map-card {
+    grid-template-columns: 1fr;
+    padding: 0.8rem;
+  }
+  .map-embed,
+  .map-embed iframe {
+    min-height: 220px;
+  }
   .legal-card { padding: 1.2rem; }
 }
 
