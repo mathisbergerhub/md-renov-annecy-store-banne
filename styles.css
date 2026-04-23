@@ -869,10 +869,13 @@ h3 {
 
 .contact-stack {
   display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.85rem;
+  align-items: start;
 }
 
 .widget-shell {
+  height: 100%;
   padding: 0.55rem;
   scroll-margin-top: 110px;
 }
@@ -899,6 +902,7 @@ h3 {
 .map-card {
   display: grid;
   gap: 0.9rem;
+  height: 100%;
   padding: 1rem;
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.72);
@@ -935,7 +939,7 @@ h3 {
 }
 
 .map-embed {
-  min-height: 230px;
+  min-height: 210px;
   overflow: hidden;
   border-radius: calc(var(--radius-lg) - 6px);
 }
@@ -943,7 +947,7 @@ h3 {
 .map-embed iframe {
   width: 100%;
   height: 100%;
-  min-height: 230px;
+  min-height: 210px;
   border: 0;
 }
 
@@ -1212,6 +1216,10 @@ h3 {
   .benefits-grid,
   .trust-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .contact-stack {
+    grid-template-columns: 1fr;
   }
 
   .media-card--hero { min-height: 0; }
