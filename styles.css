@@ -862,65 +862,13 @@ h3 {
   font-size: 0.92rem;
 }
 
-.contact-layout {
+.split-grid--contact {
+  align-items: start;
+}
+
+.contact-stack {
   display: grid;
-  gap: 1rem;
-}
-
-.contact-overview {
-  display: grid;
-  grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.9fr) minmax(0, 1fr) minmax(220px, 0.7fr);
-  gap: 1rem;
-  align-items: center;
-  padding: 1.2rem 1.25rem;
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(31, 31, 35, 0.08);
-  box-shadow: var(--shadow-soft);
-}
-
-.contact-overview__intro,
-.contact-overview__showroom,
-.contact-overview__cta {
-  display: grid;
-  gap: 0.45rem;
-}
-
-.contact-overview__intro .eyebrow,
-.contact-overview__showroom .eyebrow {
-  margin-bottom: 0;
-}
-
-.contact-overview__intro h2 {
-  max-width: none;
-  font-size: clamp(1.45rem, 2vw, 1.95rem);
-  line-height: 1.06;
-}
-
-.contact-overview__intro p:last-child,
-.contact-overview__showroom p:last-child {
-  margin: 0;
-  color: var(--muted);
-  line-height: 1.55;
-}
-
-.contact-overview__actions {
-  margin-top: 0;
-  justify-content: center;
-}
-
-.contact-overview__actions .button {
-  width: 100%;
-}
-
-.contact-overview__showroom h3 {
-  margin: 0;
-  font-size: 1.45rem;
-  line-height: 1.08;
-}
-
-.contact-overview__cta {
-  align-items: stretch;
+  gap: 0.85rem;
 }
 
 .widget-shell {
@@ -937,22 +885,45 @@ h3 {
 }
 
 .map-card {
-  padding: 0.7rem;
+  display: grid;
+  gap: 0.9rem;
+  padding: 1rem;
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.72);
   border: 1px solid rgba(31, 31, 35, 0.08);
   box-shadow: var(--shadow-soft);
 }
 
+.map-card__copy {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.map-card__copy .eyebrow {
+  margin-bottom: 0;
+}
+
+.map-card__copy h3 {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.08;
+}
+
+.map-card__copy p:last-of-type {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
 .map-card__button {
-  width: 100%;
+  width: fit-content;
   min-height: 46px;
-  padding: 0.72rem 1rem;
+  padding: 0.72rem 1.1rem;
   border-radius: 999px;
 }
 
 .map-embed {
-  min-height: 228px;
+  min-height: 230px;
   overflow: hidden;
   border-radius: calc(var(--radius-lg) - 6px);
 }
@@ -960,7 +931,7 @@ h3 {
 .map-embed iframe {
   width: 100%;
   height: 100%;
-  min-height: 228px;
+  min-height: 230px;
   border: 0;
 }
 
@@ -1231,11 +1202,6 @@ h3 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .contact-overview {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: start;
-  }
-
   .media-card--hero { min-height: 0; }
 }
 
@@ -1252,13 +1218,6 @@ h3 {
   .benefits-grid,
   .trust-grid {
     grid-template-columns: 1fr;
-  }
-  .contact-overview {
-    grid-template-columns: 1fr;
-    padding: 1rem;
-  }
-  .contact-overview__actions {
-    justify-content: stretch;
   }
   .section { padding: 4rem 0; }
   .hero-actions,
@@ -1400,12 +1359,6 @@ h3 {
   .trust-counter__label {
     font-size: 0.9rem;
   }
-  .contact-overview__intro h2 {
-    font-size: clamp(1.3rem, 5vw, 1.7rem);
-  }
-  .contact-overview__showroom h3 {
-    font-size: 1.2rem;
-  }
   .trust-item__title--rge {
     gap: 0.28rem;
   }
@@ -1442,6 +1395,9 @@ h3 {
   .map-embed,
   .map-embed iframe {
     min-height: 220px;
+  }
+  .map-card__button {
+    width: 100%;
   }
   .legal-card { padding: 1.2rem; }
 }
