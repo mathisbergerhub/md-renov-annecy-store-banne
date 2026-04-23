@@ -100,6 +100,20 @@ a {
   opacity: 0.42;
 }
 
+.offer-asterisk,
+.offer-asterisk-inline {
+  color: inherit;
+  text-decoration: none;
+}
+
+.offer-asterisk {
+  margin-left: 1px;
+}
+
+.offer-asterisk-inline {
+  font-weight: 800;
+}
+
 .offer-bar strong {
   color: var(--white);
 }
@@ -306,8 +320,8 @@ h3 {
 }
 
 .countdown__item {
-  min-width: 82px;
-  padding: 0.7rem 0.8rem;
+  min-width: 74px;
+  padding: 0.7rem 0.7rem;
   border-radius: 16px;
   background: rgba(31, 31, 35, 0.06);
 }
@@ -510,6 +524,46 @@ h3 {
   line-height: 1.6;
 }
 
+.trust-item {
+  transition:
+    transform 260ms ease,
+    border-color 260ms ease,
+    color 260ms ease;
+}
+
+.trust-item strong {
+  display: inline-block;
+  transition: transform 260ms ease;
+}
+
+.trust-item.is-visible {
+  animation: trust-float 5.6s ease-in-out infinite;
+}
+
+.trust-item:nth-child(2).is-visible {
+  animation-delay: 0.35s;
+}
+
+.trust-item:nth-child(3).is-visible {
+  animation-delay: 0.7s;
+}
+
+.trust-item:nth-child(4).is-visible {
+  animation-delay: 1.05s;
+}
+
+.trust-item:hover,
+.trust-item:focus-within {
+  color: var(--ink);
+  border-color: rgba(197, 0, 0, 0.22);
+  transform: translateY(-4px);
+}
+
+.trust-item:hover strong,
+.trust-item:focus-within strong {
+  transform: translateY(-1px);
+}
+
 .section {
   padding: 6.5rem 0;
 }
@@ -685,7 +739,7 @@ h3 {
 
 .map-card {
   display: grid;
-  grid-template-columns: minmax(0, 0.82fr) minmax(260px, 1fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
   padding: 1rem;
   border-radius: var(--radius-lg);
@@ -699,6 +753,7 @@ h3 {
   align-content: start;
   gap: 0.8rem;
   padding: 0.35rem 0.2rem 0.2rem;
+  max-width: 560px;
 }
 
 .map-card__copy .eyebrow {
@@ -716,7 +771,7 @@ h3 {
 }
 
 .map-embed {
-  min-height: 280px;
+  min-height: 360px;
   overflow: hidden;
   border-radius: calc(var(--radius-lg) - 6px);
 }
@@ -724,7 +779,7 @@ h3 {
 .map-embed iframe {
   width: 100%;
   height: 100%;
-  min-height: 280px;
+  min-height: 360px;
   border: 0;
 }
 
@@ -970,6 +1025,7 @@ h3 {
   .button,
   .skip-link { transition: none; }
   .reveal { opacity: 1; transform: none; }
+  .trust-item.is-visible { animation: none; }
 }
 
 @media (max-width: 1100px) {
@@ -999,9 +1055,6 @@ h3 {
   .nav { display: none; }
   .hero { padding-top: 1.25rem; padding-bottom: 1rem; }
   .hero-grid { min-height: auto; gap: 1.5rem; }
-  .map-card {
-    grid-template-columns: 1fr;
-  }
   .offer-layout,
   .journey-steps,
   .review-list,
@@ -1102,7 +1155,7 @@ h3 {
   }
   .countdown__grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .countdown__item {
     min-width: 0;
@@ -1158,7 +1211,7 @@ h3 {
   }
   .map-embed,
   .map-embed iframe {
-    min-height: 220px;
+    min-height: 240px;
   }
   .legal-card { padding: 1.2rem; }
 }
@@ -1181,5 +1234,16 @@ h3 {
 
   to {
     transform: translateX(calc(-100% - 2rem));
+  }
+}
+
+@keyframes trust-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
   }
 }

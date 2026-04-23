@@ -57,10 +57,12 @@ function updateCountdown(element) {
   const days = Math.floor(remaining / (1000 * 60 * 60 * 24));
   const hours = Math.floor((remaining / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((remaining / (1000 * 60)) % 60);
+  const seconds = Math.floor((remaining / 1000) % 60);
 
   const daysNode = element.querySelector('[data-countdown-unit="days"]');
   const hoursNode = element.querySelector('[data-countdown-unit="hours"]');
   const minutesNode = element.querySelector('[data-countdown-unit="minutes"]');
+  const secondsNode = element.querySelector('[data-countdown-unit="seconds"]');
   const labelNode = element.querySelector(".countdown__label");
 
   if (daysNode) {
@@ -75,6 +77,10 @@ function updateCountdown(element) {
     minutesNode.textContent = formatCountdownValue(minutes);
   }
 
+  if (secondsNode) {
+    secondsNode.textContent = formatCountdownValue(seconds);
+  }
+
   if (labelNode && remaining === 0) {
     labelNode.textContent = "Offre terminée";
   }
@@ -84,5 +90,5 @@ if (countdowns.length > 0) {
   countdowns.forEach(updateCountdown);
   window.setInterval(() => {
     countdowns.forEach(updateCountdown);
-  }, 30000);
+  }, 1000);
 }
