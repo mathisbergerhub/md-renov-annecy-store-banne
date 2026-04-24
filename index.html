@@ -15,7 +15,7 @@
     <meta name="author" content="MD Renov'" />
     <meta name="theme-color" content="#c50000" />
     <meta name="robots" content="index,follow,max-image-preview:large" />
-    <link rel="canonical" href="./" />
+    <link rel="canonical" href="https://md-annecy-store.vercel.app/" />
     <meta property="og:locale" content="fr_FR" />
     <meta property="og:type" content="website" />
     <meta
@@ -26,7 +26,8 @@
       property="og:description"
       content="Jusqu'a -25%* sur les stores bannes jusqu'au 12 mai 2026. Installation en Haute-Savoie (74) et Savoie (73), etude personnalisee et accompagnement sur mesure."
     />
-    <meta property="og:image" content="./5.png" />
+    <meta property="og:url" content="https://md-annecy-store.vercel.app/" />
+    <meta property="og:image" content="https://md-annecy-store.vercel.app/5.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
       name="twitter:title"
@@ -36,7 +37,7 @@
       name="twitter:description"
       content="Jusqu'a -25%* sur les stores bannes jusqu'au 12 mai 2026. Installation en Haute-Savoie (74) et Savoie (73), etude personnalisee et accompagnement sur mesure."
     />
-    <meta name="twitter:image" content="./5.png" />
+    <meta name="twitter:image" content="https://md-annecy-store.vercel.app/5.png" />
     <link rel="icon" type="image/svg+xml" href="./logo-mdr-site.svg" />
     <link rel="shortcut icon" href="./logo-mdr-site.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -52,10 +53,15 @@
         "@graph": [
           {
             "@type": "HomeAndConstructionBusiness",
-            "@id": "https://www.mdrenov-menuiserie.com/agence/md-renov-annecy-stores-banne#business",
+            "@id": "https://md-annecy-store.vercel.app/#business",
             "name": "MD Rénov' Annecy",
-            "url": "https://www.mdrenov-menuiserie.com/agence/md-renov-annecy-stores-banne",
+            "url": "https://md-annecy-store.vercel.app/",
             "telephone": "+33450243090",
+            "sameAs": [
+              "https://www.mdrenov-menuiserie.com",
+              "https://www.mdrenov-menuiserie.com/produits/stores-bannes",
+              "https://www.mdrenov-menuiserie.com/contact"
+            ],
             "address": {
               "@type": "PostalAddress",
               "streetAddress": "62 Route de Frangy",
@@ -66,10 +72,20 @@
             "areaServed": ["Haute-Savoie (74)", "Savoie (73)"]
           },
           {
+            "@type": "WebPage",
+            "@id": "https://md-annecy-store.vercel.app/#webpage",
+            "url": "https://md-annecy-store.vercel.app/",
+            "name": "Stores bannes à Annecy et en Savoie | Jusqu'à -25%* | MD Rénov'",
+            "isPartOf": {
+              "@id": "https://md-annecy-store.vercel.app/#business"
+            },
+            "inLanguage": "fr-FR"
+          },
+          {
             "@type": "Service",
             "serviceType": "Fourniture et pose de stores bannes sur mesure",
             "provider": {
-              "@id": "https://www.mdrenov-menuiserie.com/agence/md-renov-annecy-stores-banne#business"
+              "@id": "https://md-annecy-store.vercel.app/#business"
             },
             "areaServed": ["Haute-Savoie (74)", "Savoie (73)"],
             "offers": {
@@ -165,7 +181,7 @@
               <p class="offer-box__legal">
                 <a class="offer-asterisk-inline" href="#conditions-offre-footer">*</a>
                 Voir conditions en magasin et
-                <a href="./conditions-offre.html">conditions de l'offre</a>.
+                <a href="/conditions-offre">conditions de l'offre</a>.
               </p>
             </div>
             <ul class="hero-points">
@@ -304,7 +320,7 @@
             <div><dt>Zone</dt><dd>Installation en Haute-Savoie (74) et Savoie (73)</dd></div>
             <div><dt>Accompagnement</dt><dd>Projet personnalisé et accompagnement sur mesure</dd></div>
             <div><dt>Étude</dt><dd>Étude personnalisée gratuite et sans engagement</dd></div>
-            <div><dt>Conditions</dt><dd><a href="./conditions-offre.html">Voir les conditions de l'offre</a></dd></div>
+            <div><dt>Conditions</dt><dd><a href="/conditions-offre">Voir les conditions de l'offre</a></dd></div>
           </dl>
         </div>
       </section>
@@ -545,7 +561,7 @@
             <p class="cta-legal">
               <a class="offer-asterisk-inline" href="#conditions-offre-footer">*</a>
               Voir conditions en magasin et
-              <a href="./conditions-offre.html">conditions de l'offre</a>.
+              <a href="/conditions-offre">conditions de l'offre</a>.
             </p>
           </div>
           <div class="cta-actions">
@@ -559,10 +575,10 @@
         <div class="container site-footer__row">
           <p>MD Rénov' • 62 Route de Frangy, 74960 Meythet - Annecy</p>
           <div class="site-footer__links">
-            <a id="conditions-offre-footer" href="./conditions-offre.html">*Conditions de l'offre</a>
-            <a href="./mentions-legales.html">Mentions légales</a>
-            <a href="./conditions-utilisation.html">Conditions d'utilisation</a>
-            <a href="./politique-confidentialite.html">Politique de confidentialité</a>
+            <a id="conditions-offre-footer" href="/conditions-offre">*Conditions de l'offre</a>
+            <a href="/mentions-legales">Mentions légales</a>
+            <a href="/conditions-utilisation">Conditions d'utilisation</a>
+            <a href="/politique-confidentialite">Politique de confidentialité</a>
             <a href="https://www.mdrenov-menuiserie.com" target="_blank" rel="noopener noreferrer">
               Site MD Rénov'
             </a>
