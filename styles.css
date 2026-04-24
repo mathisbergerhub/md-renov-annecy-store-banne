@@ -555,6 +555,14 @@ h3 {
   line-height: 1.25;
 }
 
+.trust-item__subline {
+  margin: 0;
+  color: var(--ink);
+  font-size: 1.18rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
 .trust-item__text {
   color: var(--muted);
   max-width: none;
@@ -564,6 +572,7 @@ h3 {
 .trust-counter {
   align-items: baseline;
   gap: 0.08rem;
+  white-space: nowrap;
 }
 
 .trust-counter__plus,
@@ -640,17 +649,11 @@ h3 {
   font-weight: 800;
 }
 
-.trust-item__title--rge {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-
-.rge-inline {
+.trust-item__subline--rge {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
+  white-space: nowrap;
 }
 
 .trust-badge--inline {
@@ -1021,6 +1024,12 @@ h3 {
   margin: 0;
 }
 
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1rem;
+}
+
 .legal-page .site-header {
   position: relative;
 }
@@ -1235,9 +1244,12 @@ h3 {
   .journey-steps,
   .review-list,
   .campaign-grid,
-  .benefits-grid,
-  .trust-grid {
+  .benefits-grid {
     grid-template-columns: 1fr;
+  }
+  .trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.85rem;
   }
   .section { padding: 4rem 0; }
   .hero-actions,
@@ -1401,23 +1413,32 @@ h3 {
   }
   .trust-item {
     min-height: 0;
-    padding: 0.95rem 0.1rem 1rem;
-    font-size: 0.92rem;
-    border-radius: 0;
-    background: transparent;
-    box-shadow: none;
+    gap: 0.3rem;
+    padding: 0.95rem 0.9rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: 0 10px 26px rgba(22, 24, 32, 0.06);
+  }
+  .trust-item__visual {
+    min-height: 40px;
   }
   .trust-counter__value {
-    font-size: 2.1rem;
+    font-size: 2rem;
   }
   .trust-counter__label {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
-  .trust-item__title--rge {
-    gap: 0.28rem;
+  .trust-item__title {
+    font-size: 1rem;
+  }
+  .trust-item__subline {
+    font-size: 1.02rem;
   }
   .fervam-inline {
-    font-size: 0.72rem;
+    margin-left: 0.2rem;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
   }
   .section {
     padding: 3.2rem 0;
@@ -1454,6 +1475,12 @@ h3 {
     width: 100%;
   }
   .legal-card { padding: 1.2rem; }
+}
+
+@media (max-width: 420px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 560px) and (prefers-reduced-motion: no-preference) {
