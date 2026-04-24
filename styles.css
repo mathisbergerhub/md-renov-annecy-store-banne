@@ -822,6 +822,158 @@ h3 {
   gap: 1rem;
 }
 
+.section--acquisition {
+  padding-top: 0;
+}
+
+.acquisition-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(320px, 0.88fr);
+  gap: 1.4rem;
+  align-items: start;
+  padding: 1.5rem;
+  border: 1px solid rgba(31, 31, 35, 0.08);
+  border-radius: var(--radius-xl);
+  background:
+    radial-gradient(circle at top right, rgba(197, 0, 0, 0.08), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(244, 244, 247, 0.88));
+  box-shadow: var(--shadow-soft);
+}
+
+.acquisition-copy {
+  display: grid;
+  gap: 1rem;
+}
+
+.acquisition-lead {
+  margin: 0;
+  max-width: 62ch;
+  color: var(--muted);
+  line-height: 1.72;
+  font-size: 1.02rem;
+}
+
+.acquisition-topics {
+  display: grid;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.acquisition-topic {
+  padding-top: 1.2rem;
+  border-top: 1px solid rgba(31, 31, 35, 0.1);
+}
+
+.acquisition-topic h3,
+.acquisition-rail h3 {
+  max-width: none;
+}
+
+.acquisition-topic p {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.acquisition-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem 1.2rem;
+  margin-top: 0.2rem;
+}
+
+.acquisition-links a {
+  position: relative;
+  color: var(--ink);
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.acquisition-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.18rem;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(197, 0, 0, 0.24);
+  transform-origin: left center;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.acquisition-links a:hover::after,
+.acquisition-links a:focus-visible::after {
+  background: rgba(197, 0, 0, 0.72);
+  transform: scaleX(1.02);
+}
+
+.acquisition-rail {
+  position: sticky;
+  top: 106px;
+  display: grid;
+  gap: 1rem;
+  padding: 1.45rem;
+  border-radius: calc(var(--radius-xl) - 6px);
+  color: var(--white);
+  background:
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.16), transparent 26%),
+    linear-gradient(145deg, #1f1f23 0%, #32343c 60%, #c50000 100%);
+  box-shadow: var(--shadow-strong);
+}
+
+.acquisition-rail .eyebrow,
+.acquisition-rail p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.acquisition-rail h3 {
+  font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+  line-height: 1.06;
+  letter-spacing: -0.04em;
+}
+
+.acquisition-list {
+  margin: 0;
+}
+
+.acquisition-list li {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.acquisition-list li::before {
+  background:
+    radial-gradient(circle at center, rgba(255, 255, 255, 0.9) 0 34%, transparent 35%),
+    rgba(255, 255, 255, 0.16);
+}
+
+.acquisition-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.acquisition-rail .button--primary {
+  color: var(--pine);
+  background: var(--sand);
+  box-shadow: 0 16px 28px rgba(255, 255, 255, 0.1);
+}
+
+.acquisition-rail .button--ghost {
+  color: var(--white);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.acquisition-note {
+  margin: 0;
+  padding: 0.9rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
 .benefits-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1062,12 +1214,16 @@ h3 {
 }
 
 .section-links-minimal {
-  padding-top: 0;
+  padding: 0;
 }
 
 .section-links-minimal p {
   margin: 0;
   color: var(--muted);
+}
+
+.section--links {
+  padding: 1.2rem 0 2rem;
 }
 
 .legal-page .site-header {
@@ -1253,6 +1409,7 @@ h3 {
   .hero-grid,
   .split-grid,
   .proof-grid,
+  .acquisition-shell,
   .feature-grid,
   .cta-box {
     grid-template-columns: 1fr;
@@ -1294,8 +1451,13 @@ h3 {
   .section { padding: 4rem 0; }
   .hero-actions,
   .cta-actions,
-  .contact-card__actions {
+  .contact-card__actions,
+  .acquisition-actions {
     gap: 0.7rem;
+  }
+  .acquisition-rail {
+    position: relative;
+    top: auto;
   }
   .mobile-bar {
     position: fixed;
@@ -1410,6 +1572,33 @@ h3 {
     display: grid;
     grid-template-columns: 1fr;
     gap: 0.65rem;
+  }
+  .acquisition-shell {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .acquisition-topic {
+    padding-top: 1rem;
+  }
+  .acquisition-links {
+    display: grid;
+    gap: 0.8rem;
+  }
+  .acquisition-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .acquisition-actions .button {
+    width: 100%;
+    min-height: 48px;
+  }
+  .acquisition-rail {
+    padding: 1.1rem;
+    border-radius: 20px;
+  }
+  .acquisition-note {
+    padding: 0.8rem 0.85rem;
+    font-size: 0.86rem;
   }
   .hero-proof {
     justify-content: center;
@@ -1535,6 +1724,9 @@ h3 {
   .site-footer__row p {
     max-width: 30ch;
     line-height: 1.55;
+  }
+  .section--links {
+    padding: 0.9rem 0 1.6rem;
   }
   .site-footer__links {
     display: grid;
