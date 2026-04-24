@@ -131,3 +131,20 @@ if (countdowns.length > 0) {
     countdowns.forEach(updateCountdown);
   }, 1000);
 }
+
+document.querySelectorAll("[data-activate-embed]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const shell = button.closest(".widget-shell, .map-embed");
+    const iframe = shell?.querySelector("iframe[data-src]");
+
+    if (!shell || !iframe) {
+      return;
+    }
+
+    if (!iframe.getAttribute("src")) {
+      iframe.setAttribute("src", iframe.getAttribute("data-src"));
+    }
+
+    shell.classList.add("is-embed-active");
+  });
+});

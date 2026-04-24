@@ -114,7 +114,7 @@
           <a href="#offre">L'offre</a>
           <a href="#contact">Contact</a>
           <a href="#agendize">RDV en ligne</a>
-          <a href="https://www.mdrenov-menuiserie.com" target="_blank" rel="noopener noreferrer">Site officiel</a>
+          <a href="https://www.mdrenov-menuiserie.com" target="_blank" rel="noopener noreferrer">Site</a>
           <a class="button button--ghost" href="tel:+33450243090">04 50 24 30 90</a>
           <a class="button button--primary" href="#agendize">Prendre RDV</a>
         </nav>
@@ -209,7 +209,7 @@
             <p class="trust-item__text">
               Accompagnement de
               <span class="az-inline" aria-label="A à Z">A &agrave; Z</span>
-              et SAV reactif
+              et SAV r&eacute;actif
             </p>
           </article>
           <article class="trust-item trust-item--badge reveal">
@@ -220,7 +220,7 @@
                 <span class="trust-badge__check">&#10003;</span>
               </span>
             </p>
-            <p class="trust-item__text">pour aides a la renovation</p>
+            <p class="trust-item__text">pour aides &agrave; la r&eacute;novation</p>
           </article>
           <article class="trust-item trust-item--stamp reveal">
             <p class="trust-item__title">Environnement</p>
@@ -405,9 +405,18 @@
               <div class="contact-card__copy">
                 <p class="eyebrow">Décrivez-nous votre projet</p>
               </div>
+              <div class="embed-consent">
+                <p>
+                  En affichant ce module, vous acceptez le chargement du service
+                  de prise de rendez-vous Agendize et ses éventuels traceurs.
+                </p>
+                <button class="button button--primary" type="button" data-activate-embed>
+                  Afficher le module de rendez-vous
+                </button>
+              </div>
               <iframe
                 class="agendize-frame"
-                src="https://france.agendize.com/web/widget/?c=MDRENOV_Annecy&amp;cs=false&amp;lang=fr&amp;source=web"
+                data-src="https://france.agendize.com/web/widget/?c=MDRENOV_Annecy&amp;cs=false&amp;lang=fr&amp;source=web"
                 title="Prendre rendez-vous en ligne avec MD Rénov'"
                 loading="lazy"
               ></iframe>
@@ -427,8 +436,17 @@
                 </a>
               </div>
               <div class="map-embed">
+                <div class="embed-consent embed-consent--map">
+                  <p>
+                    Affichez la carte interactive pour charger Google Maps et
+                    consulter l’itinéraire vers le showroom.
+                  </p>
+                  <button class="button button--ghost" type="button" data-activate-embed>
+                    Afficher la carte
+                  </button>
+                </div>
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2775.3961904452512!2d6.086838576523987!3d45.92338077108507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478b850529d1b97f%3A0x77434beec9374a97!2sMD%20R%C3%A9nov&#39;!5e0!3m2!1sfr!2sfr!4v1776953611642!5m2!1sfr!2sfr"
+                  data-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2775.3961904452512!2d6.086838576523987!3d45.92338077108507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x478b850529d1b97f%3A0x77434beec9374a97!2sMD%20R%C3%A9nov&#39;!5e0!3m2!1sfr!2sfr!4v1776953611642!5m2!1sfr!2sfr"
                   title="Plan du showroom MD Rénov' à Meythet"
                   loading="lazy"
                   referrerpolicy="no-referrer-when-downgrade"
@@ -471,6 +489,53 @@
         </div>
       </section>
 
+      <section class="section section--links">
+        <div class="container">
+          <div class="section-intro reveal">
+            <p class="eyebrow">Aller plus loin</p>
+            <h2>Retrouvez aussi MD Rénov' sur le site.</h2>
+          </div>
+          <div class="proof-points">
+            <article class="proof-item reveal">
+              <h3>Stores bannes</h3>
+              <p>
+                Consultez la page dédiée aux stores bannes, aux
+                options disponibles et aux inspirations complémentaires.
+              </p>
+              <p>
+                <a href="https://www.mdrenov-menuiserie.com/produits/stores-bannes" target="_blank" rel="noopener noreferrer">
+                  Voir la page stores bannes
+                </a>
+              </p>
+            </article>
+            <article class="proof-item reveal">
+              <h3>Showroom Annecy</h3>
+              <p>
+                Préparez votre visite et découvrez l'univers MD Rénov' ainsi que
+                les autres familles de produits présentées au showroom.
+              </p>
+              <p>
+                <a href="https://www.mdrenov-menuiserie.com/nos-showrooms" target="_blank" rel="noopener noreferrer">
+                  Découvrir les showrooms MD Rénov'
+                </a>
+              </p>
+            </article>
+            <article class="proof-item reveal">
+              <h3>Formulaire de contact</h3>
+              <p>
+                Accédez directement au formulaire principal MD Rénov' si vous
+                préférez un parcours de contact classique sur le site.
+              </p>
+              <p>
+                <a href="https://www.mdrenov-menuiserie.com/contact#Contact-Form" target="_blank" rel="noopener noreferrer">
+                  Ouvrir le formulaire
+                </a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <div class="container cta-box reveal">
           <div>
@@ -495,11 +560,11 @@
           <p>MD Rénov' • 62 Route de Frangy, 74960 Meythet - Annecy</p>
           <div class="site-footer__links">
             <a id="conditions-offre-footer" href="./conditions-offre.html">*Conditions de l'offre</a>
-            <a href="./mentions-legales.html">Mentions legales</a>
+            <a href="./mentions-legales.html">Mentions légales</a>
             <a href="./conditions-utilisation.html">Conditions d'utilisation</a>
-            <a href="./politique-confidentialite.html">Politique de confidentialite</a>
+            <a href="./politique-confidentialite.html">Politique de confidentialité</a>
             <a href="https://www.mdrenov-menuiserie.com" target="_blank" rel="noopener noreferrer">
-              Site officiel MD Renov'
+              Site MD Rénov'
             </a>
           </div>
         </div>
