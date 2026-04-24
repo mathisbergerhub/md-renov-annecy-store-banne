@@ -377,34 +377,6 @@ h3 {
   margin-top: 1.8rem;
 }
 
-.contact-actions {
-  align-items: center;
-}
-
-.contact-form-link {
-  color: var(--muted);
-  font-size: 0.94rem;
-  font-weight: 700;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.22em;
-}
-
-.contact-proof {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem;
-  margin: 1rem 0 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.55;
-}
-
-.contact-proof strong {
-  color: var(--ink);
-}
-
 .microcopy {
   margin: 1rem 0 0;
   color: #6f7868;
@@ -944,21 +916,14 @@ h3 {
   padding: 0.35rem 0.2rem 0.55rem;
 }
 
-.contact-card__copy p:last-child {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.92rem;
-  line-height: 1.5;
-}
-
 .contact-card__copy .eyebrow {
   margin-bottom: 0;
 }
 
 .agendize-frame {
   width: 100%;
-  height: clamp(420px, 52vh, 500px);
-  min-height: clamp(420px, 52vh, 500px);
+  height: clamp(460px, 56vh, 540px);
+  min-height: clamp(460px, 56vh, 540px);
   border: 0;
   border-radius: calc(var(--radius-lg) - 6px);
   background: #fff;
@@ -1451,15 +1416,6 @@ h3 {
     grid-template-columns: 1fr;
     gap: 0.65rem;
   }
-  .contact-form-link {
-    justify-self: center;
-    font-size: 0.9rem;
-  }
-  .contact-proof {
-    justify-content: center;
-    text-align: center;
-    font-size: 0.84rem;
-  }
   .hero-proof {
     justify-content: center;
     width: 100%;
@@ -1557,8 +1513,8 @@ h3 {
     line-height: 1.6;
   }
   .agendize-frame {
-    height: 460px;
-    min-height: 460px;
+    height: 500px;
+    min-height: 500px;
   }
   .map-card {
     grid-template-columns: 1fr;
