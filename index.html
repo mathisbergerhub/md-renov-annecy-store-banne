@@ -57,6 +57,12 @@
             "name": "MD Rénov' Annecy",
             "url": "https://store-banne-annecy.mdrenov-menuiserie.com/",
             "telephone": "+33450243090",
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.3",
+              "reviewCount": "92",
+              "bestRating": "5"
+            },
             "sameAs": [
               "https://www.mdrenov-menuiserie.com",
               "https://www.mdrenov-menuiserie.com/produits/stores-bannes",
@@ -123,7 +129,7 @@
     <header class="site-header" id="top">
       <div class="container header-row">
         <a class="brand" href="#top" aria-label="Retour en haut">
-          <img src="./logo-mdr-site.svg" alt="Logo MD Rénov'" />
+          <img src="./logo-mdr-site.svg" alt="Logo MD Rénov'" width="241" height="54" />
         </a>
 
         <nav class="nav" aria-label="Navigation principale">
@@ -193,6 +199,10 @@
               <a class="button button--primary" href="#agendize">Prendre RDV en ligne</a>
               <a class="button button--ghost" href="tel:+33450243090">Appeler maintenant</a>
             </div>
+            <p class="hero-proof">
+              <strong>4,3 / 5</strong>
+              <span>sur 92 avis Google</span>
+            </p>
             <p class="microcopy">
               Offre valable jusqu'au 12 mai 2026 • Showroom à Meythet • Voir
               conditions en magasin
@@ -204,6 +214,9 @@
               <img
                 src="./5.png"
                 alt="Terrasse équipée d'un store banne MD Rénov'"
+                width="960"
+                height="1200"
+                fetchpriority="high"
               />
             </figure>
           </div>
@@ -293,10 +306,10 @@
           </div>
           <div class="campaign-grid reveal">
             <figure class="media-card campaign-card">
-              <img src="./4.png" alt="Déjeuner en terrasse sous un store banne" />
+              <img src="./4.png" alt="Déjeuner en terrasse sous un store banne" width="960" height="1200" loading="lazy" />
             </figure>
             <figure class="media-card campaign-card">
-              <img src="./1.png" alt="Store banne installé sur une maison avec vue dégagée" />
+              <img src="./1.png" alt="Store banne installé sur une maison avec vue dégagée" width="960" height="1200" loading="lazy" />
             </figure>
           </div>
         </div>
@@ -376,6 +389,7 @@
           <div class="section-intro reveal">
             <p class="eyebrow">Voix clients</p>
             <h2>Des témoignages qui reflètent la qualité de l'accompagnement.</h2>
+            <p class="section-note">Note Google actuelle : <strong>4,3 / 5</strong> sur <strong>92 avis</strong>.</p>
           </div>
           <div class="review-list">
             <blockquote class="review reveal">
@@ -510,49 +524,11 @@
       </section>
 
       <section class="section section--links">
-        <div class="container">
-          <div class="section-intro reveal">
-            <p class="eyebrow">Aller plus loin</p>
-            <h2>Retrouvez aussi MD Rénov' sur le site.</h2>
-          </div>
-          <div class="proof-points">
-            <article class="proof-item reveal">
-              <h3>Stores bannes</h3>
-              <p>
-                Consultez la page dédiée aux stores bannes, aux
-                options disponibles et aux inspirations complémentaires.
-              </p>
-              <p>
-                <a href="https://www.mdrenov-menuiserie.com/produits/stores-bannes" target="_blank" rel="noopener noreferrer">
-                  Voir la page stores bannes
-                </a>
-              </p>
-            </article>
-            <article class="proof-item reveal">
-              <h3>Showroom Annecy</h3>
-              <p>
-                Préparez votre visite et découvrez l'univers MD Rénov' ainsi que
-                les autres familles de produits présentées au showroom.
-              </p>
-              <p>
-                <a href="https://www.mdrenov-menuiserie.com/nos-showrooms" target="_blank" rel="noopener noreferrer">
-                  Découvrir les showrooms MD Rénov'
-                </a>
-              </p>
-            </article>
-            <article class="proof-item reveal">
-              <h3>Formulaire de contact</h3>
-              <p>
-                Accédez directement au formulaire principal MD Rénov' si vous
-                préférez un parcours de contact classique sur le site.
-              </p>
-              <p>
-                <a href="https://www.mdrenov-menuiserie.com/contact#Contact-Form" target="_blank" rel="noopener noreferrer">
-                  Ouvrir le formulaire
-                </a>
-              </p>
-            </article>
-          </div>
+        <div class="container section-links-minimal reveal">
+          <p>
+            Vous pouvez aussi retrouver l'ensemble des produits, showrooms et informations pratiques sur
+            <a href="https://www.mdrenov-menuiserie.com" target="_blank" rel="noopener noreferrer">le site MD Rénov'</a>.
+          </p>
         </div>
       </section>
 
@@ -583,6 +559,9 @@
             <a href="/mentions-legales">Mentions légales</a>
             <a href="/conditions-utilisation">Conditions d'utilisation</a>
             <a href="/politique-confidentialite">Politique de confidentialité</a>
+            <button class="site-footer__button" type="button" data-open-consent>
+              Gérer les services externes
+            </button>
             <a href="https://www.mdrenov-menuiserie.com" target="_blank" rel="noopener noreferrer">
               Site MD Rénov'
             </a>
@@ -590,6 +569,27 @@
         </div>
       </footer>
     </main>
+
+    <div class="consent-banner" data-consent-banner hidden>
+      <p class="consent-banner__text">
+        Pour afficher directement le module de rendez-vous et la carte, cette
+        page peut charger des services externes.
+      </p>
+      <div class="consent-banner__actions">
+        <button class="button button--primary" type="button" data-consent-accept>
+          Activer les services
+        </button>
+        <button class="button button--ghost" type="button" data-consent-decline>
+          Continuer sans
+        </button>
+        <button class="button button--ghost" type="button" data-consent-reset hidden>
+          Désactiver les services
+        </button>
+      </div>
+      <p class="consent-banner__legal">
+        <a href="/politique-confidentialite">Politique de confidentialité</a>
+      </p>
+    </div>
 
     <div class="mobile-bar">
       <a href="#agendize">RDV en ligne</a>

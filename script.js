@@ -77,6 +77,7 @@ document.querySelectorAll(".faq-item").forEach((item) => {
 });
 
 const countdowns = document.querySelectorAll("[data-countdown]");
+const embedConsentKey = "mdr-external-services-consent";
 
 function formatCountdownValue(value) {
   return String(value).padStart(2, "0");
@@ -132,19 +133,112 @@ if (countdowns.length > 0) {
   }, 1000);
 }
 
+function activateEmbed(shell) {
+  const iframe = shell?.querySelector("iframe[data-src]");
+
+  if (!shell || !iframe) {
+    return;
+  }
+
+  if (!iframe.getAttribute("src")) {
+    iframe.setAttribute("src", iframe.getAttribute("data-src"));
+  }
+
+  shell.classList.add("is-embed-active");
+}
+
+function activateExternalServices() {
+  document
+    .querySelectorAll(".widget-shell, .map-embed")
+    .forEach((shell) => activateEmbed(shell));
+}
+
 document.querySelectorAll("[data-activate-embed]").forEach((button) => {
   button.addEventListener("click", () => {
     const shell = button.closest(".widget-shell, .map-embed");
-    const iframe = shell?.querySelector("iframe[data-src]");
+    activateEmbed(shell);
+  });
+});
 
-    if (!shell || !iframe) {
+const consentBanner = document.querySelector("[data-consent-banner]");
+const consentAcceptButton = document.querySelector("[data-consent-accept]");
+const consentDeclineButton = document.querySelector("[data-consent-decline]");
+const consentResetButton = document.querySelector("[data-consent-reset]");
+const consentOpenButtons = document.querySelectorAll("[data-open-consent]");
+
+function hideConsentBanner() {
+  if (consentBanner) {
+    consentBanner.hidden = true;
+  }
+}
+
+function showConsentBanner() {
+  if (consentBanner) {
+    consentBanner.hidden = false;
+  }
+}
+
+function deactivateExternalServices() {
+  document.querySelectorAll(".widget-shell, .map-embed").forEach((shell) => {
+    const iframe = shell.querySelector("iframe[data-src]");
+
+    if (!iframe) {
       return;
     }
 
-    if (!iframe.getAttribute("src")) {
-      iframe.setAttribute("src", iframe.getAttribute("data-src"));
-    }
-
-    shell.classList.add("is-embed-active");
+    iframe.removeAttribute("src");
+    shell.classList.remove("is-embed-active");
   });
-});
+}
+
+function syncConsentActions(state) {
+  if (!consentResetButton) {
+    return;
+  }
+
+  consentResetButton.hidden = state !== "accepted";
+}
+
+if (consentBanner) {
+  const storedConsent = window.localStorage.getItem(embedConsentKey);
+
+  if (storedConsent === "accepted") {
+    activateExternalServices();
+    syncConsentActions("accepted");
+    hideConsentBanner();
+  } else if (storedConsent === "declined") {
+    syncConsentActions("declined");
+    hideConsentBanner();
+  } else {
+    syncConsentActions(storedConsent);
+    showConsentBanner();
+  }
+
+  consentAcceptButton?.addEventListener("click", () => {
+    window.localStorage.setItem(embedConsentKey, "accepted");
+    activateExternalServices();
+    syncConsentActions("accepted");
+    hideConsentBanner();
+  });
+
+  consentDeclineButton?.addEventListener("click", () => {
+    window.localStorage.setItem(embedConsentKey, "declined");
+    syncConsentActions("declined");
+    hideConsentBanner();
+  });
+
+  consentResetButton?.addEventListener("click", () => {
+    window.localStorage.setItem(embedConsentKey, "declined");
+    deactivateExternalServices();
+    syncConsentActions("declined");
+    hideConsentBanner();
+  });
+
+  consentOpenButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const state = window.localStorage.getItem(embedConsentKey);
+      syncConsentActions(state);
+      showConsentBanner();
+    });
+  });
+}
