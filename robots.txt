@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://md-annecy-store.vercel.app/sitemap.xml
+Sitemap: https://store-banne-annecy.mdrenov-menuiserie.com/sitemap.xml
