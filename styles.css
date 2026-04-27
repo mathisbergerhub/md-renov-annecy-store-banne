@@ -1204,8 +1204,9 @@ h3 {
   border-radius: var(--radius-xl);
   color: var(--white);
   background:
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 28%),
-    linear-gradient(135deg, #8f0000 0%, #c50000 56%, #e14545 100%);
+    radial-gradient(circle at 78% 48%, rgba(197, 0, 0, 0.26), transparent 20%),
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 24%),
+    linear-gradient(135deg, #1b1c21 0%, #2a2c33 58%, #b61a1a 100%);
   box-shadow: var(--shadow-strong);
 }
 
@@ -1216,14 +1217,14 @@ h3 {
 
 .cta-box .button--primary {
   color: var(--white);
-  background: var(--terracotta-deep);
-  box-shadow: 0 14px 32px rgba(120, 0, 0, 0.28);
+  background: #c50000;
+  box-shadow: 0 14px 32px rgba(197, 0, 0, 0.28);
 }
 
 .cta-box .button--ghost {
-  color: var(--white);
-  background: rgba(255, 255, 255, 0.14);
-  border-color: rgba(255, 255, 255, 0.28);
+  color: var(--pine);
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 .mobile-bar {
